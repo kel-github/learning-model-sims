@@ -32,7 +32,7 @@ get_trial_outcome <- function( choice, choice_probs ){
   } else if (choice == "orange"){
     idx = 2
   }
-  outcome = sample(c(1, 0), 1, prob = choice_probs[idx, ])
+  outcome = sample(c(1, 0), 1, prob = choice_probs[, idx])
 }
 
 
@@ -111,4 +111,4 @@ for (i in 1:ntrials){
 # make into a dataframe and save to wideform for further use
 ###############################################################################################################################
 data <- data.frame(choices = choice, outcomes = outcomes)
-write.csv(data, "example.csv")
+write.csv(data, "EWA_example.csv")

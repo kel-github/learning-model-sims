@@ -5,4 +5,4 @@ This code is free to share, and use. Please cite and use responsibly.
 
 Each folder contains simulation code for the following RL models:  
 
-Experience-Weighted Attraction Model - Ouden et al, 2013, Neuron  
+EWA/ Experience-Weighted Attraction Model - (Ouden et al, 2013), Neuron, and Reward and Punishment Model (Frank et al, 2007, cited in Ouden et al, 2013)
