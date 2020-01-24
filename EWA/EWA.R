@@ -110,5 +110,5 @@ for (i in 1:ntrials){
 ###############################################################################################################################
 # make into a dataframe and save to wideform for further use
 ###############################################################################################################################
-data <- data.frame(choices = choice, outcomes = outcomes)
+data <- data.frame(choices = choice, outcomes = outcomes, exp_weights = experience_weights )
 write.csv(data, "EWA_example.csv")
