@@ -50,7 +50,7 @@ for(i in 2:length(dat$ls)) dat$ls[i] = if_else(dat$outcomes[i-1] != 1 & dat$choi
 for(i in 2:length(dat$ls)) dat$ls[i] = if_else(dat$outcomes[i-1] != 0, NA, as.logical(dat$ls[i]))
 for (i in 2:length(dat$ls)) dat$ls[i] = if_else(dat$s[i-1]!=dat$s[i], NA, as.logical(dat$ls[i]))
 
-plot.dat <- inner_join(dat %>% group_by(group, s, RV) %>%
+plot.dat <- inner_join(dat %>% group_by(group, s, RV) %>% filter(RV>1 & RV<7) %>%
                        transmute(trials_to_criterion=length(outcomes)) %>%
                        group_by(group, s) %>%
                        summarise(mu_t2c=mean(trials_to_criterion)),
@@ -58,7 +58,7 @@ plot.dat <- inner_join(dat %>% group_by(group, s, RV) %>%
                        summarise(winstay=mean(ws, na.rm=TRUE),
                                  loseshft=mean(ls, na.rm=TRUE)),
                        by=c("group", "s"))
-write.csv(plot.dat, "EWA_sim_behavResults.csv")
+write.csv(plot.dat, "EWA_sim_behavResults_RV2to6.csv")
 
 # --------------------------------------------------------------------------------------------------------------------------
 # plot results of simulations
