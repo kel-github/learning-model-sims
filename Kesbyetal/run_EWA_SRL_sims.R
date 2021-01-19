@@ -61,7 +61,7 @@ if( file.exists(fname) ){ # then you have run the sim already so just load the w
                            transmute(trials_to_criterion=length(outcomes)) %>%
                            group_by(group, s) %>%
                            summarise(mu_t2c=mean(trials_to_criterion)),
-                         dat %>% group_by(group, s) %>%
+                         dat %>% group_by(group, s) %>% filter(RV>1 & RV<7) %>% # KG just added
                            summarise(winstay=mean(ws, na.rm=TRUE),
                                      loseshft=mean(ls, na.rm=TRUE)),
                          by=c("group", "s"))
